@@ -1,0 +1,52 @@
+.input-bars{
+ 
+    display: inline;
+    padding: 5px;
+    justify-content: space-between;
+    white-space: nowrap;
+    padding-left: 2px;
+ 
+}
+
+.location-input{
+    position: relative;
+    display:inline;
+    margin-right:10px; 
+    width: 8%;
+    height: 2%;
+    background-color: blue;
+    padding-right: 14px;
+
+}
+.movie-input{
+    display: inline;
+    width: 8%;
+    height: 2%;
+    background-color: purple;
+}
+.search-background{
+    padding: 2px;
+    background-color: pink;
+}
+.display-header{
+    display: inline-block;
+    margin-right: 50px;
+    width: 8%;
+    height: 2%;
+    font-family:'Courier New', Courier, monospace;
+    size: 20px;
+    
+}
+.advert-panel
+{
+    display: inline;
+    left: 50%;
+    background-color: maroon;
+}
+.searchbars-total{
+    position: relative;
+    left: 15%;
+   
+    display: inline;
+    padding-bottom: 30px;
+}

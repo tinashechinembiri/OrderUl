@@ -1,0 +1,20 @@
+.headers{
+    display:grid; 
+    grid-template-areas: "logo nav";
+    border: 2px solid rgba(255,255,255,0.1);
+    background-color: rgb(248, 247, 248); 
+    
+    
+}
+.nav-items{
+   grid-area: nav;
+   display: grid; 
+   grid-template-columns: repeat(10, auto); 
+   align-items: left;
+   justify-items: left;
+   
+}
+.Logo{
+    width: 80px;
+    height: 80px;
+}
