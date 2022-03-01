@@ -1,27 +1,21 @@
-import React, {  } from "react";
+import React, {  Fragment} from "react";
 import '../CustomHooks/CSS/WhatsOn.css'
 
 const SearchBar = ({input , onchangeInput} : {input :string , onchangeInput:Function}) => {
     const onChange =(e:React.ChangeEvent<HTMLInputElement>) => {
-
         onchangeInput(e.target.value); 
     }
 
-   return(
-
-    
-    <React.Fragment>
-    
-        <input  
-       
+   return( 
+    <Fragment>
+        <input   
+        className="search_input" 
         type="text"
         id="movie-search"
         value={input}
-        placeholder="search movie"
+        placeholder="Start typing a film or event"
         onChange={onChange}
         />
- 
-    </React.Fragment>
-    
+    </Fragment>  
 )}
 export default SearchBar; 

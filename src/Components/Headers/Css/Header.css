@@ -9,7 +9,7 @@
 .nav-items{
    grid-area: nav;
    display: grid; 
-   grid-template-columns: repeat(10, auto); 
+   grid-template-columns: repeat(20, auto); 
    align-items: left;
    justify-items: left;
    
@@ -17,4 +17,6 @@
 .Logo{
     width: 80px;
     height: 80px;
+    align-items: left
+    ;
 }

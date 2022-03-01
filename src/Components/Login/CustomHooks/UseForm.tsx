@@ -1,8 +1,8 @@
 import  { useState } from 'react'; 
 import {omit} from 'lodash'; 
  interface Loginvalues {
-    username?:string | undefined, 
-    password?:string | undefined
+    username?:string , 
+    password?:string 
 }
 type IunionType = Loginvalues; 
 const useForm = () => {
@@ -15,18 +15,13 @@ const useForm = () => {
         let val:string = event.target.value; 
         validate( name, val); 
         // validate values in state
-     
+        console.log(event.target.name)
        // setInputs(inputs => ({...inputs, [event.target.name]: event.target.value}));
         setValues({
             ...values ,  
             [name]:val,
-        }); 
-
-        
-
+        });      
     }
-  
-    
     const validate =( name :string, value:string ) => {
         
         switch(name)
@@ -64,8 +59,7 @@ const useForm = () => {
             break; 
             case'email':
             break; 
-            
-
+                        
             default:
                 break; 
         }

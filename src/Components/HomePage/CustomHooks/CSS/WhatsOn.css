@@ -1,10 +1,11 @@
 .input-bars{
- 
-    display: inline;
-    padding: 5px;
-    justify-content: space-between;
+    position: relative;
     white-space: nowrap;
     padding-left: 2px;
+    display: block;
+    padding: 20px;
+    left: 0%;
+  
  
 }
 
@@ -12,29 +13,31 @@
     position: relative;
     display:inline;
     margin-right:10px; 
-    width: 8%;
-    height: 2%;
-    background-color: blue;
+    width: 130px;
+    height: 10px;
     padding-right: 14px;
-
 }
 .movie-input{
     display: inline;
     width: 8%;
-    height: 2%;
-    background-color: purple;
+    left: 26%;
+    position: fixed;
 }
 .search-background{
     padding: 2px;
     background-color: pink;
 }
 .display-header{
-    display: inline-block;
     margin-right: 50px;
     width: 8%;
     height: 2%;
-    font-family:'Courier New', Courier, monospace;
-    size: 20px;
+    font-weight: 400;
+    font-family: isonormregular;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    line-height: 1.1;
+    size: 60px;
+    left: 0%;
     
 }
 .advert-panel
@@ -44,9 +47,28 @@
     background-color: maroon;
 }
 .searchbars-total{
-    position: relative;
-    left: 15%;
-   
-    display: inline;
+    position: absolute;
     padding-bottom: 30px;
+    left: 19%;
+    top: 0%;
+
 }
+.search_input{
+   
+    position:absolute;
+    height: 10px;
+    top: 30%;
+    width: 250px;   
+}
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: black;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: black;
+  }

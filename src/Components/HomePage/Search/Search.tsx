@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import MovieSearchBar from "./MovieSearchBar"
 import FilteredSearch from '../Helpers/FilteredSearches'; 
 import SearchData from './SearchData'; 
@@ -21,6 +21,8 @@ const Dummy_Movies =[
     }}
 ]
 const Search = () => {
+
+    console.log('reload')
     const [UserIput, SetInput] = useState<any| null>(''); 
     const[searchData, SetSearchData] = useState<any| null>();
     
@@ -37,17 +39,17 @@ const Search = () => {
        
     }
     return(
-        <div  className="movie-input">
+       <Fragment>
         <MovieSearchBar
             input={UserIput}
             onchangeInput={updateSearch}
         />
      
         <SearchData
-        responseData={searchData}
+         responseData={searchData}
         /> 
 
-        </div>
+     </Fragment>
 
     )
 }

@@ -1,9 +1,15 @@
-import React, {  } from "react";
+import React, { useEffect } from "react";
 import'./Css/Header.css'
-import {currentUser} from '../../Interface/CurrentUser'; 
+import { useAuthstate,useAuthDispatch} from'../../Helpers/Context'
 
-const  Headers = ({currentuser }:currentUser) => {
-    const loggedin = currentuser; 
+const  Headers = ({logouts}: {logouts : () =>void}) => {
+    const {user} = useAuthstate(); 
+    const dispatch = useAuthDispatch
+    const loggedin = user; 
+
+    useEffect(()=>{
+
+    }, [user]); 
     return(
         <header className="headers">
             <img src={ process.env.PUBLIC_URL +"/assets/logo.jfif"} className="Logo" alt="logo"/>
@@ -18,16 +24,16 @@ const  Headers = ({currentuser }:currentUser) => {
                 (<div>
                     <li>
                         <a href={"/userprofile"}>
-                            {currentuser?.name}
+                            {user.username}
                         </a>
                     </li>
                     <li>
-                        <a href="/login">LogOut</a>
+                        <a onClick={logouts} href="/login">LogOut</a>
                     </li>
                 </div>)
                  :(<div>
                      <li> 
-                         <a href={"/login"}> Login </a>
+                         <a  href={"/login"}> Login </a>
                      </li>
                      <li>
                          <a href={"/register"}>
