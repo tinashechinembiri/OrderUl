@@ -1,27 +1,23 @@
-import React, { useEffect } from "react";
 import'./Css/Header.css'
-import { useAuthstate,useAuthDispatch} from'../../Helpers/Context'
+import { useAuthstate} from'../../Helpers/Context'
 
 const  Headers = ({logouts}: {logouts : () =>void}) => {
     const {user} = useAuthstate(); 
-    const dispatch = useAuthDispatch
     const loggedin = user; 
 
-    useEffect(()=>{
-
-    }, [user]); 
+     
     return(
         <header className="headers">
             <img src={ process.env.PUBLIC_URL +"/assets/logo.jfif"} className="Logo" alt="logo"/>
 
             <nav className="nav-items">
-                <a>Whats on </a>
-                <a>Big Screen Events</a>
-                <a>Inside Venue</a>
-                <a>offers</a>
+                <a href ='/'>Whats on </a>
+                <a href ='/'>Big Screen Events</a>
+                <a href ='/'>Inside Venue</a>
+                <a href ='/'>offers</a>
 
                 {loggedin ? 
-                (<div>
+                (<div className="nav-items_div">
                     <li>
                         <a href={"/userprofile"}>
                             {user.username}
@@ -31,7 +27,7 @@ const  Headers = ({logouts}: {logouts : () =>void}) => {
                         <a onClick={logouts} href="/login">LogOut</a>
                     </li>
                 </div>)
-                 :(<div>
+                 :(<div className="nav-items_div">
                      <li> 
                          <a  href={"/login"}> Login </a>
                      </li>

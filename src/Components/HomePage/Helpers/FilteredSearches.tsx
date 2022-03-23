@@ -1,9 +1,10 @@
 
-const FilteredSearches = async(input:string , data :Array<any>) => {
-    
-    return data.filter((movies :{Name:string}) =>{
-       
-        return movies.Name.toLowerCase().includes(input.toLowerCase())
+const FilteredSearches = (input:string , data :Array<any>) => {
+    let response 
+    response = data?.filter((movies:{Name:string}) =>{
+     
+        return movies?.Name.toLowerCase().includes(input.toLowerCase())
     })
+    return response; 
 }
 export default FilteredSearches; 

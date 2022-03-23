@@ -1,6 +1,6 @@
 import React, {  Fragment } from "react";
 import'../CSS/CreateUser.css'; 
-import {IRegistration, IErrors} from '../Interface/Registration'
+import { IErrors} from '../Interface/Registration'
 import UserButtons from'../../../Helpers/HelperComponents/UserButtons'
 
 interface IUserStep {

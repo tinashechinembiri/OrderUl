@@ -3,6 +3,7 @@ import '../CustomHooks/CSS/WhatsOn.css'
 
 const SearchBar = ({input , onchangeInput} : {input :string , onchangeInput:Function}) => {
     const onChange =(e:React.ChangeEvent<HTMLInputElement>) => {
+
         onchangeInput(e.target.value); 
     }
 

@@ -16,7 +16,7 @@ const  AccountsData = [
 ]; 
 const Accountsinput = ({onchange, errors}:IComponentsInterface) => {
     const  inputs = () => {
-        return  AccountsData.map(({name,_Placeholder, type }) => {
+        return  AccountsData?.map(({name,_Placeholder, type }) => {
             return< div className="input-container" key={name}> 
             {
            (errors[name]|| null) && <h3> {(errors[name] || null)}</h3>

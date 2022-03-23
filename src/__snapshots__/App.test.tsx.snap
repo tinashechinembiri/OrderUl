@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app ts create a snapshot of the app 1`] = `
+<div
+  className="App"
+>
+  <div>
+    <div>
+       PageHeaderMock
+    </div>
+  </div>
+  HomePageMock
+</div>
+`;

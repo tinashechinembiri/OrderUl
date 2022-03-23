@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mainpage create a mainpage snapshot 1`] = `
+<div
+  className="mainpage"
+>
+  <div>
+    Loading...
+  </div>
+</div>
+`;
+
+exports[`mainpage create a snap shot after 1`] = `
+<div
+  className="mainpage"
+>
+  <div
+    className="input-bars"
+  >
+    <div
+      className="searchbars-total"
+    >
+      <div
+        aria-level={2}
+        className="display-header"
+        role="heading"
+      >
+         Whats on
+      </div>
+      <div
+        className="movie-input"
+      >
+        <input
+          className="location-input"
+          onClick={[Function]}
+          readOnly={true}
+          value="choose your location"
+        />
+        <input
+          className="search_input"
+          id="movie-search"
+          onChange={[Function]}
+          placeholder="Start typing a film or event"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <ul
+      className="ul-list-adverts"
+    />
+  </div>
+</div>
+`;

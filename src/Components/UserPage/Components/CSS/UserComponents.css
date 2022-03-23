@@ -8,9 +8,9 @@
 }
 .card {
     width: 1500PX; 
-    height: 300px;
+    height: 320px;
     background-color: rgb(247, 14, 14);
-    background: linear-gradient(#f8f8f8, #fff);
+    background:#330036;
     box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
     border-radius: 10px;
     overflow: hidden;
@@ -27,19 +27,24 @@
     max-width: 100%;
     margin-bottom: 1rem;
     background-color: transparent;
+    display: flex;
+    flex-direction: column;
 }
-.tablesProfile td {
+.tablesProfile a  {
     text-transform: none;
     letter-spacing: 0;
     margin-bottom: 17px;
-    color: #4E4E4E;
+    color: #EEE1B3;
     font-size: 1.1em;
     line-height: 1.6em;
     margin-right: 25px;
     text-align:initial;
     vertical-align: top;
 }
-.tablesProfile td:nth-child(2) {
+.UserProfiles h1 {
+    color: #EEE1B3;
+}
+.userData span:nth-child(2) {
     text-align: right;
   }
   .button{
@@ -58,5 +63,10 @@
   .button :hover{
       background: #BA7E7E;
       transition: all .4s ease-in-out;
+  }
+  tr{
+  
+    
+    
   }
   

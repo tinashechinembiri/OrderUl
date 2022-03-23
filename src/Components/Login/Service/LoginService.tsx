@@ -21,7 +21,7 @@ export interface Icreateuser{
     county:string, 
     country:string
 }
-const Login = async (user : {username:string, password:string}, dispatch:React.Dispatch<actionType> ) => {
+const LoginService = async (user : {username:string, password:string}, dispatch:React.Dispatch<actionType> ) => {
         const username = user.username; 
         const password =user.password; 
         const requestOptions = {
@@ -35,7 +35,7 @@ const Login = async (user : {username:string, password:string}, dispatch:React.D
              const response =  await fetch( Login_Service_Url+'login/', 
              requestOptions); 
              const {code, token, message} = await response.json(); 
-             if (code != 200)
+             if (code as number !== 200)
              {
                 dispatch({type:'error', data: {_errors:message}}); 
                 
@@ -72,29 +72,37 @@ const createregisterData = (registerData:Icreateuser) => {
     const accountid = 'ac'+getRandomInt(10000) as string; 
     const user_id = 'user_'+getRandomInt(10000) as string; 
     const _createdUser = {
-        user_id: user_id, 
-        email:registerData.email, 
-        password:registerData.password, 
-        Account:{
-            accountid: accountid, 
-            firstname:registerData.firstname, 
-            lastname:registerData.lastname, 
-            phone:registerData.phone, 
-            Address :{
-                addressname:registerData.addressname, 
-                postcode:registerData.postcode, 
-                county:registerData.county, 
-                country:registerData.country
-            }
-        }  
+        accountid, 
+        user_id, 
+        ...registerData
+        // user_id: user_id, 
+        // email:registerData.email, 
+        // password:registerData.password, 
+        // Account:{
+        //     accountid: accountid, 
+        //     firstname:registerData.firstname, 
+        //     lastname:registerData.lastname, 
+        //     phone:registerData.phone, 
+        //     Address :{
+        //         addressname:registerData.addressname, 
+        //         postcode:registerData.postcode, 
+        //         county:registerData.county, 
+        //         country:registerData.country
+        //     }
+        // }  
     }
     return _createdUser; 
 }
 
 const logout = (dispatch:React.Dispatch<actionType>) => {
+    try{
     dispatch({type:'logout'})
     // remove login from  local storage 
     localStorage.removeItem('user'); 
+    }catch (ex :any)
+    {
+        console.log(ex); 
+    }
     
 }
 
@@ -111,4 +119,4 @@ const getCurrentUser = () => {
     
     } 
 }
-export default { Login , logout, getCurrentUser,register }; 
+export  { LoginService , logout, getCurrentUser,register }; 

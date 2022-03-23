@@ -8,12 +8,12 @@ const Advert = (props:any) =>
         if(advert_Data)
         {
             return (
-                props.advert_Data.map((adverts : {id:string, name:string, image:string})=>(
+                props.advert_Data.map(({id, name, image} : {id:string, name:string, image:string})=>(
                   
                     <AdvertComponets
-                    name={adverts.name}
-                    image={adverts.image}
-                    key={adverts.id}
+                    name={name}
+                    image={image}
+                    key={id}
                     />
                  
                 ))

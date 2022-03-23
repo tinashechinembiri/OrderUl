@@ -1,6 +1,6 @@
-import React, {  Fragment, useEffect } from "react";
+import React, {  Fragment } from "react";
 import'../CSS/CreateUser.css'; 
-import {IRegistration, IErrors} from '../Interface/Registration'
+import { IErrors} from '../Interface/Registration'
 import Accountsinput from'./AccountsInput'
 interface IAccount {
     nextsteps:()=>void, 
@@ -10,9 +10,7 @@ interface IAccount {
 
 }
 const AccountStep =({nextsteps, onchange, prevstep, errors}:IAccount) => {
-      
-
-    /*
+         /*
     use effect clean up 
     https://blog.logrocket.com/understanding-react-useeffect-cleanup-function/
     */

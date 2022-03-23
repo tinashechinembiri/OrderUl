@@ -1,5 +1,4 @@
-import { values } from "lodash";
-import React, {  Fragment, useState } from "react";
+import  {  Fragment } from "react";
 import'../CSS/CreateUser.css'; 
 import {IRegistration} from '../Interface/Registration' 
 const TermsConditions =({prevstep, values}: {prevstep:()=>void, values:IRegistration| undefined}  ) => {

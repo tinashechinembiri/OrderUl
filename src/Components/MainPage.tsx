@@ -1,14 +1,14 @@
-import React, { Component } from "react";
+
 import WhatsOn from "./HomePage/WhatsOn";
 
-class MainPage extends Component
+const MainPage = () => 
 {
-    render(){
+ 
         return(
-            <div>
+            <div className="mainpage">
             <WhatsOn/>
             </div>   
         );   
-    }
+    
 }
 export default MainPage; 

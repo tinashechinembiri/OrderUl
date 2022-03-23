@@ -1,43 +1,41 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import MovieSearchBar from "./MovieSearchBar"
-import FilteredSearch from '../Helpers/FilteredSearches'; 
+import FilteredSearches from '../Helpers/FilteredSearches'; 
 import SearchData from './SearchData'; 
+import SearchService from '../Service/SearchService'
 import'../CustomHooks/CSS/WhatsOn.css'
-const Dummy_Movies =[
-    {id:1, Name: 'spaceranger', MovieDetails:{
-        Cast :['Actor 1', 'actor 2'], 
-        Synopsis:'movies is about items and all that ', 
-        Director:['direct 1']
-    }}, 
-    {id:2, Name: 'powerranger', MovieDetails:{
-        Cast :['Actor 2', 'actor 4'], 
-        Synopsis:'movies is about items and all that ', 
-        Director:['direct 2']
-    }}, 
-    {id:3, Name: 'promise', MovieDetails:{
-        Cast :['Actor 2', 'actor 4'], 
-        Synopsis:'movies is about items and all that ', 
-        Director:['direct 2']
-    }}
-]
-const Search = () => {
 
-    console.log('reload')
+const Search = () => {
     const [UserIput, SetInput] = useState<any| null>(''); 
-    const[searchData, SetSearchData] = useState<any| null>();
-    
-    const updateSearch = async(input:string) => {
-        const filtereddata = await FilteredSearch(UserIput, Dummy_Movies) ; 
-        
-        SetInput(input)
+    const[searchData, SetSearchData] = useState<any| null>(null);
+    const [movieData, setMovieData] = useState <any| null>(null);
+    async function moviessearchdata () {
+        try{
+        const movies =  await SearchService(); 
+        setMovieData(movies);
+        }catch(ex:any)
+        {
+            console.log(ex); 
+        } 
+   }
+    useEffect (()=> {
+         moviessearchdata();  
+    }, [])
+    const updateSearch = (input:string) => { 
+        SetInput(input);
+    }
+    function searchuser (){
+        const filtereddata =  FilteredSearches(UserIput, movieData) ; 
+     
         SetSearchData(filtereddata); 
- 
-        if (!input)
+        if (!UserIput)
         {
             SetSearchData([])
-        }
-       
+        } 
     }
+    useEffect (()=> {
+        searchuser(); 
+    }, [UserIput])
     return(
        <Fragment>
         <MovieSearchBar
@@ -48,9 +46,7 @@ const Search = () => {
         <SearchData
          responseData={searchData}
         /> 
-
      </Fragment>
-
     )
 }
 export default Search; 

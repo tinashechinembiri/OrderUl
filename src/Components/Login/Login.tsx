@@ -1,6 +1,6 @@
 import React, {  Fragment,  } from "react";
 import {useNavigate } from "react-router-dom";
-import LoginService from "./Service/LoginService";
+import {LoginService} from "./Service/LoginService";
 import useForm from './CustomHooks/UseForm'; 
 import './Css/Login.css'; 
 import {useAuthDispatch, useAuthstate} from'../../Helpers/Context'; 
@@ -16,7 +16,7 @@ interface IloginService{
 
 const Login = () => {
     const dispatch = useAuthDispatch(); 
-    const  { user,loading, _errors} = useAuthstate(); 
+    const  { _errors} = useAuthstate(); 
     const navigate = useNavigate();
     
    // const [username, setUsername] = useState(""); 
@@ -29,7 +29,7 @@ const Login = () => {
         e.preventDefault();        //const values; 
        if (Object.keys(errors as object).length === 0 && Object.keys(values as object).length!== 0)
         {
-           const _loginservice =  await LoginService.Login(values as {username:string, password:string},dispatch ) as IloginService; 
+           const _loginservice =  await LoginService(values as {username:string, password:string},dispatch ) as IloginService; 
            if (!_loginservice?.error)
            {
                

@@ -26,11 +26,13 @@ export const intinialstates : Istate =  {
 }
 //https://blog.harveydelaney.com/creating-your-own-mini-redux-in-react/
 //https://www.sumologic.com/blog/react-hook-typescript/
+
+
 export type actionType = {type:'request',  data:Istate}|{type:'success', data:Istate} |{type:'error',  data:Istate} | {type:'current', data:Istate} | {type:'logout'}; 
 
 export const AuthReducer = (intialstate:Istate  , action:actionType) =>
 {   
-    console.log(action)
+ 
     switch(action.type){
         case'request':
         return {...intialstate}; 

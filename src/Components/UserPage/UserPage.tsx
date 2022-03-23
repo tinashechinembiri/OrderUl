@@ -1,44 +1,28 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, createContext, useContext} from "react";
 import UserComponents from'./Components/UserComponents'
 import  './Components/CSS/UserComponents.css'
-
-const UserData = {
-    user_id: "user_5508",
-    email: "jdhfhhfgj0102@gmail.com",
-    password: "$2b$14$vo0WAMVgWCFUSil714PJzer6JJXTntiLlyH8/lYBrKDEz9tM0YY2G",
-    accounts: {
-        Address: {
-            addressname: "test2222",
-            postcode: "ng1233",
-            county: "placestest",
-            country: "countrytest"
-        },  
-        accountid: "ac9840",
-        firstname: "updateduser",
-        lastname: "abc",
-        phone: 987654321,
-    }
-}
+import {getuserdata,updateProfile} from './service/Userprofileservice';
+import {UserprofileAuthDispatch}from './Components/CustomHooks/UserContextdat'
 const UserPage = () => {
-    const [userProfile, SetuserProfile]= useState({}); 
-
+   const dispatch = UserprofileAuthDispatch(); 
     useEffect (() =>{
-        if (UserData)
-        {
-            SetuserProfile (UserData)
+        const getUserdata = async () => {
+            const userprofile = await getuserdata(); 
+            
+            dispatch({type:'userprofile', userprofile:userprofile})
         }
-    }, []); 
-    
-    const {email, password, accounts} = UserData;
+        getUserdata(); 
+    }, []);
     return(
         <div className="center">
+          
             <div className="card">
+           
              <UserComponents 
-                 email={email}  
-                password={password}
-                accounts={accounts}
-             /> 
+                /> 
+               
              </div>
+            
         </div>
     )
 

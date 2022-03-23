@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`whats on load the whats on page - test 1`] = `
+<div
+  className="input-bars"
+>
+  <div
+    className="searchbars-total"
+  >
+    <div
+      aria-level={2}
+      className="display-header"
+      role="heading"
+    >
+       Whats on
+    </div>
+    <div
+      className="movie-input"
+    >
+      <input
+        className="location-input"
+        onClick={[Function]}
+        readOnly={true}
+        value="choose your location"
+      />
+      <input
+        className="search_input"
+        id="movie-search"
+        onChange={[Function]}
+        placeholder="Start typing a film or event"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <ul
+    className="ul-list-adverts"
+  />
+</div>
+`;

@@ -8,17 +8,21 @@ const Dummy_Advert :Array<{id:string, name:string, image:string}> = [
     {'id':'test3', 'name':'Covid requirement', 'image':''}
 ];
 const AdvertPanel =() => {
+
     const [adverts, setAdverts] = useState<Array<any>>([]); 
-    console.log('rendered')
-    useEffect( () =>{
+    const  getAdvertdata =  () => {
         if (Dummy_Advert.length >=0)
         {
             setAdverts(Dummy_Advert); 
         }
+    }
+    useEffect( () =>{
+        getAdvertdata(); 
     }, []); 
 
     return(
         <Fragment>
+        
             <Advert
                 advert_Data={adverts}
             />

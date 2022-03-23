@@ -2,7 +2,6 @@ import React,{lazy, Suspense} from "react";
 import CustomSteps  from'../CustomHooks/CustomSteps';
 import {IRegistration, IErrors} from '../Interface/Registration'; 
 import UserStep from '../Components/UserSteps'; 
-
 const TermsConditions = lazy(()=> import('../Components/TermsConditions')); 
 const AccountStep = lazy(()=> import('../Components/AccountStep')); 
 interface Icustomers{
@@ -17,7 +16,7 @@ const Customusersteps =({values, errors ={}, handleChange}:Icustomers) => {
         
     }
     const nextStep =() => {
-     // if(Object.keys(errors as object).length === 0 && Object.keys(values as object).length!== 0)
+     if(Object.keys(errors as object).length === 0 && Object.keys(values as object).length!== 0)
     {   
         _next();    
     }
